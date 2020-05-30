@@ -1,5 +1,4 @@
 node_modules
 .vscode
 frontend
-config
 .env

@@ -15,10 +15,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
-app.use(passport.initialize());
-
-require("./config/passport")(passport);
-
 app.use("/api/users", users);
 
 app.listen(process.env.PORT || 4000, () =>
