@@ -25,9 +25,12 @@ router.post("/register", (req, res) => {
     if (user) {
       if (user.confirmed) {
         errors.email = "Email already exists";
-        return res.status(400).json(errors);
+        console.log("email alrady exists");
+        return res.status(400).json({ message: "email already exists" });
       } else {
         sendConfirmation(user._id, user.email);
+        console.log("about to send conf");
+        return res.json({ message: "confirmation sent" });
       }
     } else {
       const newUser = new User({
